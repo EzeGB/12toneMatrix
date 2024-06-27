@@ -7,13 +7,26 @@ import java.util.Collections;
 public class Main {
     public static void main(String[] args) {
         ArrayList <Integer> toneRow = defineToneRow();
+        ArrayList <Integer> inverseRow= defineInverseRow(toneRow);
         System.out.println(toneRow);
+        System.out.println(inverseRow);
         }
 
     public static ArrayList <Integer> defineToneRow(){
-        ArrayList <Integer> toneRow= new ArrayList<>(Arrays.asList(0,1,2,3,4,5,6,7,8,9,10,11));
+        ArrayList <Integer> toneRow= new ArrayList<>(Arrays.asList(1,2,3,4,5,6,7,8,9,10,11));
         Collections.shuffle(toneRow);
+        toneRow.addFirst(0);
     return toneRow;
+    }
+
+    public static ArrayList <Integer> defineInverseRow(ArrayList <Integer> toneRow){
+        ArrayList <Integer> inverseRow = new ArrayList<>(toneRow);
+        for (int i = 0; i < inverseRow.size(); i++){
+            if (i!=0){
+                inverseRow.set(i,12-inverseRow.get(i));
+            }
+        }
+        return inverseRow;
     }
 }
 
