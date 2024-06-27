@@ -7,9 +7,14 @@ import java.util.Collections;
 public class Main {
     public static void main(String[] args) {
         ArrayList <Integer> toneRow = defineToneRow();
-        ArrayList <Integer> inverseRow= defineInverseRow(toneRow);
-        System.out.println(toneRow);
-        System.out.println(inverseRow);
+        ArrayList <Integer> inverseRow = defineInverseRow(toneRow);
+        ArrayList <ArrayList<Integer>> matrix = new ArrayList <>();
+
+        for (int i = 0; i < 12; i++) {
+            matrix.add(new ArrayList<>());
+            matrix.set(i, defineTransponsedRow(toneRow, inverseRow.get(i)));
+            System.out.println(matrix.get(i));
+        }
         }
 
     public static ArrayList <Integer> defineToneRow(){
