@@ -28,5 +28,16 @@ public class Main {
         }
         return inverseRow;
     }
+
+    public static ArrayList <Integer> defineTransponsedRow(ArrayList <Integer> toneRow, int transposition){
+        ArrayList <Integer> transposedRow = new ArrayList<>(toneRow);
+        for (int i = 0; i < transposedRow.size(); i++){
+                transposedRow.set(i,transposition+transposedRow.get(i));
+                if (transposedRow.get(i)>=12){
+                    transposedRow.set(i,transposedRow.get(i)-12);
+                }
+        }
+        return transposedRow;
+    }
 }
 
